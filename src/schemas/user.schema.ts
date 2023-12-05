@@ -2,8 +2,11 @@ import { object, string, TypeOf } from 'zod';
 
 export const createUserSchema = object({
     body: object({
-        name: string({
-            required_error: 'Name is required',
+        login: string({
+            required_error: 'Login is required',
+        }),
+        password: string({
+            required_error: 'Password is required',
         }),
         email: string({
             required_error: 'Email is required',
@@ -24,7 +27,8 @@ export const getUserSchema = object({
 export const updateUserSchema = object({
     ...params,
     body: object({
-        name: string(),
+        login: string(),
+        password: string(),
         email: string(),
     }).partial(),
 });

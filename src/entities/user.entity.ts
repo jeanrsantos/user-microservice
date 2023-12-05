@@ -4,7 +4,10 @@ import Model from './model.entity';
 @Entity('users')
 export class User extends Model {
     @Column()
-    name: string;
+    login: string;
+
+    @Column()
+    password: string;
 
     @Column()
     email: string;

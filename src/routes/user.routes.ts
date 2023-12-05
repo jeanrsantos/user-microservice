@@ -22,7 +22,7 @@ router
     .get(getUsersHandler);
 
 router
-    .route('/:postId')
+    .route('/:userId')
     .get(validate(getUserSchema), getUserHandler)
     .patch(validate(updateUserSchema), updateUserHandler)
     .delete(validate(deleteUserSchema), deleteUserHandler);
